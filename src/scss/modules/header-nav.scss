@@ -1,0 +1,186 @@
+        .header__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @media (max-width: $md) {
+                display: none;
+            }
+        }
+
+        .menu {
+            padding-right: 30px;
+            overflow-x: auto;
+        }
+
+        .menu__list {
+            display: flex;
+
+            @media (max-width: $md) {
+                padding-top: 40px;
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                top: 0;
+                left: 0;
+                z-index: 5;
+                width: 100%;
+                background: $gray;
+            }
+
+            li {
+                display: flex;
+                align-items: center;
+                padding: 20px 0;
+                border-bottom: 3px solid $gray;
+
+                @media (max-width: $md) {
+                    justify-content: center;
+                }
+
+                &:hover {
+                    border-bottom: 3px solid #000;
+                }
+
+                & svg {
+                    fill: $black;
+                    width: 22px;
+                    height: 22px;
+                    padding-right: 7px;
+                }
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    width: max-content;
+                }
+            }
+
+            li+li {
+                margin-left: 40px;
+
+                @media (max-width: $md) {
+                    margin-left: 0;
+                }
+            }
+        }
+
+        .header__line {
+            height: 30px;
+            border-left: 1px solid $secondary;
+
+            @media (max-width: $xl) {
+                display: none;
+            }
+        }
+
+        .header__auth {
+            padding-left: 30px;
+            display: flex;
+
+            &_admin {
+                width: 200px;
+
+                .header__auth_block-link {
+                    display: inline-flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                &_name {
+                    text-align: center;
+                    width: 150px;
+                }
+
+                &_title {
+                    color: #617F88;
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 12px;
+                    line-height: 14px;
+                    margin-top: 5px;
+                    text-align: center;
+                }
+
+            }
+
+            @media (max-width: $xl) {
+                // flex-wrap: wrap;
+                // padding-left: 0px;
+            }
+
+            li {
+                display: flex;
+                align-items: center;
+                padding: 20px 0;
+                border-bottom: 3px solid $gray;
+
+                @media (max-width: $xl) {
+                    // padding: 0;
+                }
+
+                &:hover {
+                    border-bottom: 3px solid #000;
+                }
+
+
+                & a {
+                    @media (max-width: $md) {
+                        display: none
+                    }
+
+                    display: flex;
+                    align-items: center;
+                }
+
+                & svg {
+                    fill: $black;
+                    width: 22px;
+                    height: 22px;
+                }
+
+
+            }
+
+            li+li {
+                margin-left: 20px;
+            }
+        }
+
+        .header__mobile {
+            display: none;
+
+            @media (max-width: $md) {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+
+        .menu__btn {
+            padding: 20px 0;
+
+            & svg {
+                display: none;
+                fill: $black;
+                width: 22px;
+                height: 22px;
+
+                @media (max-width: $md) {
+                    display: block;
+                }
+            }
+        }
+
+        .menu__btn-close {
+            position: absolute;
+            right: 5%;
+            top: 5%;
+
+            & svg {
+                fill: $black;
+                width: 22px;
+                height: 22px;
+            }
+        }

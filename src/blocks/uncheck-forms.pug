@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        link(rel="stylesheet", href="../css/index.css")
+    body
+        .personal-area
+            headerNav
+            section.uncheck
+                .container
+                    .uncheck__title Неразобранные формы
+                    .uncheck__wrapper
+                        ul.uncheck__header
+                            li.uncheck__list_first Наименование формы
+                            li Отправитель, ФИО
+                            li Группа
+                            li Комментарий
+                            li Действия
+                            li Статус
+                        stringInTable(v-for='(item, index) in this.CHECK_TABLE'
+                                    :key='item.id'
+                                    :list='item')
+                        .uncheck__info
+                            a(href="#").uncheck__info_order Заявление на предоставление академического отпуска 
+                            .uncheck__info_date Константинов Константин Константинович 
+                            .uncheck__info_group 3
+                            .uncheck__info_comment Ошибка в заполнении фио ректора 
+                            .uncheck__info_act
+                                button.uncheck__info_act_block.send-back
+                                    figure.icon-send-back
+                                    p.uncheck__info_send_title Отправить обратно
+                                button.uncheck__info_act_block
+                                    figure.icon-accept
+                                    p.uncheck__info_accept_title Принять заявление
+                            .uncheck__info_status Отправлено для исправлений
+                        .uncheck__info
+                            a(href="#").uncheck__info_order Заявление на предоставление академического отпуска 
+                            .uncheck__info_date Константинов Константин Константинович
+                            .uncheck__info_group 3333333333
+                            .uncheck__info_comment Ошибка в заполнении фио ректора
+                            .uncheck__info_act
+                                button.uncheck__info_act_block.send-back
+                                    figure.icon-send-back
+                                    p.uncheck__info_send_title Отправить обратно
+                                button.uncheck__info_act_block
+                                    figure.icon-accept
+                                    p.uncheck__info_accept_title Принять заявление
+                            .uncheck__info_status Отправлено для исправлений

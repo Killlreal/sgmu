@@ -1,0 +1,35 @@
+.new-cell {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    &__title-wrapper {
+        display: flex;
+        justify-content: space-between;
+        color: $accent;
+        line-height: 21px;
+        padding-bottom: 17px;
+    }
+    &__name_change {
+        max-width: 400px;
+        width: 100%;
+        color: #002935;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 28px;
+        border: 0;
+        border-bottom: 1px solid #617f88;
+    }
+    &__actions {
+        display: flex;
+    }
+    &__edit {
+        margin-right: 20px;
+    }
+    &__edit,
+    &__delete {
+        svg {
+            fill: $secondary;
+            width: 15px;
+            height: 15px;
+        }
+    }
+}

@@ -1,0 +1,40 @@
+//color
+$white: #ffffff;
+$black: #000000;
+$gray: #f4f8f8;
+$major: #e2f8ff;
+$secondary: #617f88;
+$accent: #002935;
+//Typography
+$font-main: "Roboto",
+sans-serif;
+$line-height-base: 1.5;
+$line-height-use:21px;
+$font-size-base: 18px;
+$font-size-small: 12px;
+$font-size-big: 24px;
+$font-size-medium: 14px;
+// $font-size-h1: 18px;
+$font-wight-regular: 400;
+$font-wight-medium: 500;
+//grid
+$grid-gutter-width: 40px;
+$container-padding-x: $grid-gutter-width / 2;
+$container-max-width: 1180px+$grid-gutter-width;
+$grid-columns: 12;
+//breakpoints
+
+$xs: 0;
+$sm: 576px;
+$md: 770px;
+$lg: 992px;
+$xl: 1200px;
+
+// container
+
+$container-max-widths: (
+    $sm: 580px,
+    $md: 760px,
+    $lg: 1000px,
+    $xl: 1220px
+);

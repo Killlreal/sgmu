@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/index.css"/>
+  </head>
+  <body>
+    <section class="form-card">
+      <div class="form-card__inner">
+        <div class="form-card__info">
+          <div class="form-card__number">1</div>
+          <div class="form-card__title">{{info.title}}</div>
+        </div>
+        <div class="form-card__actions">
+          <div class="form-card__edit btn-mini">
+            <figure class="icon-pencile icon-font"></figure>
+            <p>Редактировать</p>
+          </div>
+          <div class="form-card__delete btn-mini">
+            <figuer class="icon-delete icon-font"></figuer>
+            <p>Удалить</p>
+          </div>
+          <div class="form-card__appoint btn-mini" @click="show = !show">
+            <figure class="icon-assign icon-font"></figure>
+            <p>Назначить </p>
+          </div>
+        </div>
+        <form class="form-card__choice-people" action="" method="" v-if="show">
+          <div class="choice-people__filters-inner">
+            <div class="choice-people__filters-header">
+              <div class="filters-header__title">Фильтры</div>
+              <div class="filters-header__close" @click="clickToShow">{{btnText}}</div>
+            </div>
+            <div class="choice-people__filters-main" v-if="showFilter">
+              <div class="filters-main__block">
+                <div class="filters-main__course">
+                  <p>Назначить курс</p>
+                  <select class="select__course input-filter" id="select__course" name="selectCourse" v-model="courseSelect">
+                    <option v-for="option in ['Все', ...this.COURSES]" v-bind:value="option">{{ option }}</option>
+                  </select><div class="__select" data-state="">
+<div class="__select__title" data-default="Option 0">Option 0</div>
+<div class="__select__content">
+<input id="singleSelect0" class="__select__input" type="radio" name="singleSelect" checked />
+<label for="singleSelect0" class="__select__label">Option 0</label>
+<input id="singleSelect1" class="__select__input" type="radio" name="singleSelect" />
+<label for="singleSelect1" class="__select__label">Option 1</label>
+<input id="singleSelect2" class="__select__input" type="radio" name="singleSelect" />
+<label for="singleSelect2" class="__select__label">Option 2</label>
+<input id="singleSelect3" class="__select__input" type="radio" name="singleSelect" />
+<label for="singleSelect3" class="__select__label">Option 3</label>
+<input id="singleSelect4" class="__select__input" type="radio" name="singleSelect" />
+<label for="singleSelect4" class="__select__label">Option 4</label>
+<input id="singleSelect5" class="__select__input" type="radio" name="singleSelect" />
+<label for="singleSelect5" class="__select__label">Option 5</label>
+<input id="singleSelect6" class="__select__input" type="radio" name="singleSelect" />
+<label for="singleSelect6" class="__select__label">Option 6</label>
+</div>
+</div>
+                </div>
+                <div class="filters-main__allstudents">
+                  <p>Назначить студента</p>
+                  <div class="filters-main__students">
+                    <input class="input-filter filters-main__students_second-name" v-model="query" @input="findPeople" type="text" placeholder="Фамилия Имя Отчество" required="required"/>
+                  </div>
+                </div>
+              </div>
+              <div class="filters-main__group">
+                <div class="filters-main__group_course">
+                  <p>Назначить группу</p>
+                  <select class="select__course input-filter" id="select__course" v-model="groupSelect" required="required">
+                    <option v-for="option in ['Все', ...this.GROUPS]" v-bind:value="option">{{ option }}</option>
+                  </select>
+                </div>
+                <button class="button-course btn-mini"> 
+                  <figure class="icon-pencile"></figure><span>Назначить</span>
+                </button>
+              </div>
+            </div>
+            <div class="choice-people__filters-people">
+              <p class="choice-people_title">Курс</p>
+              <p class="choice-people_title">Группа</p>
+              <p class="choice-people_title">ФИО</p>
+              <p class="choice-people_title">Действия</p>
+            </div>
+            <div class="choice-people__block" v-if="query.length&gt;0" v-for="val in this.PEOPLE">
+              <div class="choice-people__block_flex">
+                <div class="choice-people__course">{{ val.course }}</div>
+                <div class="choice-people__group">{{ val.group }}</div>
+                <div class="choice-people__date">{{ val.name }}</div><a class="choice-people__act" href="#"><img class="choice-people__img" src="icons/act.svg"/>
+                  <p>Назначить </p></a><a class="choice-people__cancel" href="#"><img class="choice-people__img" src="icons/cancel.svg"/>
+                  <p>Отменить назначение</p></a>
+              </div>
+            </div>
+            <div class="buttons__block">
+              <input class="buttons__block_submit btn-mini" type="submit" value="Сохранить"/>
+              <input class="buttons__block_rest btn-mini" type="rest" value="Отменить изменения"/>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <script src="../scripts/script.js"></script>
+  </body>
+</html>

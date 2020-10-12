@@ -1,0 +1,279 @@
+.creater {
+    padding-top: 60px;
+}
+
+.creater__inner {
+    display: flex;
+    height: 100%;
+
+    @media (max-width: $md) {
+        flex-direction: column;
+    }
+}
+
+.creater__template {
+    max-width: 590px;
+    width: 100%;
+    padding-right: 90px;
+
+    @media (max-width: $md) {
+        padding-right: 0px;
+    }
+}
+
+.creater__line {
+    height: auto;
+    border-left: 1px solid #000;
+}
+
+.creater__fields {
+    max-width: 590px;
+    width: 100%;
+    padding-left: 89px;
+
+    @media (max-width: $md) {
+        padding-left: 0px;
+    }
+}
+
+.fields__title {
+    font-size: $font-size-big;
+    font-weight: $font-wight-medium;
+    line-height: 28px;
+    color: $accent;
+}
+
+.template {
+    &__inner {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        font-size: $font-size-big;
+        font-weight: $font-wight-medium;
+        line-height: 28px;
+        color: $accent;
+        padding-bottom: 40px;
+    }
+
+    &__radios {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 80px;
+
+        .template__title {
+            padding-bottom: 30px;
+        }
+
+        .template__notime_box,
+        .template__date_box {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .template__notime {
+            position: absolute;
+            z-index: -1;
+            opacity: 0;
+        }
+
+        .template__img {
+            margin-left: 13px;
+        }
+
+        .template__date_calendar {
+            margin-left: 20px;
+        }
+
+        .calendar_hidden {
+            display: none;
+        }
+
+        .template__notime_label {
+            display: inline-flex;
+            align-items: center;
+            user-select: none;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 21px;
+            color: #617F88;
+
+            &::before {
+                content: '';
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                flex-shrink: 0;
+                flex-grow: 0;
+                border: 1px solid #617F88;
+                border-radius: 50%;
+                margin-right: 20px;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: 50% 50%;
+            }
+        }
+
+        .template__notime:not(:disabled):not(:checked)+label:hover::before {
+            border-color: #b3d7ff;
+        }
+
+        /* стили для активной радиокнопки (при нажатии на неё) */
+        .template__notime:not(:disabled):active+label::before {
+            background-color: #b3d7ff;
+            border-color: #b3d7ff;
+        }
+
+        /* стили для радиокнопки, находящейся в фокусе */
+        .template__notime:focus+label::before {
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+
+        /* стили для радиокнопки, находящейся в фокусе и не находящейся в состоянии checked */
+        .template__notime:focus:not(:checked)+label::before {
+            border-color: black;
+        }
+
+        /* стили для радиокнопки, находящейся в состоянии checked */
+        .template__notime:checked+label::before {
+            border-color: #617F88;
+            background: url('/icons/radio.svg') no-repeat 50%;
+        }
+
+        /* стили для радиокнопки, находящейся в состоянии disabled */
+        .template__notime:disabled+label::before {
+            background-color: #e9ecef;
+        }
+    }
+
+    &__name {
+        position: relative;
+        padding-bottom: 40px;
+
+        &_input {
+            width: 100%;
+            color: $secondary;
+            padding-left: 10px;
+            padding-bottom: 10px;
+            border: 0;
+            border-bottom: 1px solid $secondary;
+        }
+
+        &_output {
+            color: $accent;
+            font-size: $font-size-base;
+            font-weight: $font-wight-medium;
+            line-height: 21px;
+        }
+    }
+
+    &__enter {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+
+        svg {
+            fill: $black;
+            width: 13px;
+            height: 10px;
+        }
+    }
+
+    &__edit {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+
+        svg {
+            fill: $black;
+            width: 15px;
+            height: 15px;
+        }
+    }
+
+    &__shell {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    &__select {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        padding-bottom: 40px;
+        position: relative;
+        padding-top: 20px;
+    }
+
+    &__namefield {
+        max-width: 400px;
+        width: 100%;
+        color: $accent;
+        font-size: $font-size-base;
+        font-weight: $font-wight-regular;
+        line-height: 28px;
+        border: 0;
+        border-bottom: 1px solid $secondary;
+    }
+
+    &__addform {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 20px;
+    }
+
+    &__drop {
+        text-align: center;
+        max-width: 400px;
+        width: 100%;
+        background: $gray;
+        padding: 14px 30px;
+
+        &_bd {
+            border: 1px dashed $secondary;
+        }
+
+        &_bdred {
+            color: #e76b6b;
+            border: 5px dashed #e76b6b;
+        }
+    }
+
+    &__types-menu-button {
+        font-size: 36px;
+        font-weight: $font-wight-medium;
+        line-height: 42px;
+        max-height: 72px;
+        color: $secondary;
+        border: 1px solid $secondary;
+        padding: 14px 24px;
+    }
+
+    &__list-data-types {
+        position: absolute;
+        top: 120px;
+        right: -77px;
+        max-width: 147px;
+        width: 100%;
+        background: $secondary;
+        color: $gray;
+        font-size: $font-size-small;
+        line-height: 14px;
+        padding: 10px;
+
+        li+li {
+            margin-top: 10px;
+        }
+    }
+
+    &__send-button {
+        max-width: 280px;
+        width: 100%;
+        padding: 20px 65px;
+        border-radius: 30px;
+    }
+}

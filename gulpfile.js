@@ -36,6 +36,13 @@ function buildCSSDist() {
     .pipe(dest("build"));
 }
 
+function buildCSSforSGMU() {
+  return src("src/scss/pages/*.scss")
+    .pipe(sass())
+    .pipe(postcss([autoprefixer(), cssnano()]))
+    .pipe(dest("build/css"));
+}
+
 function buildScripts() {
   return src("src/scripts/**/*.js").pipe(dest("build/scripts/"));
 }
@@ -55,6 +62,7 @@ function watchFiles() {
   watch("src/styles/*.scss", buildStyles);
   watch(["src/pages/**/*.pug", "src/blocks/**/*.pug"], buildPages);
   watch("src/*.scss", buildCSSDist);
+  watch("src/**/*.scss", buildCSSforSGMU);
 }
 
 exports.default = series(
@@ -66,7 +74,8 @@ exports.default = series(
         buildStyles,
         buildScripts,
         buildAssets,
-        buildCSSDist
+        buildCSSDist,
+        buildCSSforSGMU
       ),
       watchFiles
     )

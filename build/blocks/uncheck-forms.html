@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/index.css"/>
+  </head>
+  <body>
+    <div class="personal-area">
+      <headerNav></headerNav>
+      <section class="uncheck">
+        <div class="container">
+          <div class="uncheck__title">Неразобранные формы</div>
+          <div class="uncheck__wrapper">
+            <ul class="uncheck__header">
+              <li class="uncheck__list_first">Наименование формы</li>
+              <li>Отправитель, ФИО</li>
+              <li>Группа</li>
+              <li>Комментарий</li>
+              <li>Действия</li>
+              <li>Статус</li>
+            </ul>
+            <stringInTable v-for="(item, index) in this.CHECK_TABLE" :key="item.id" :list="item"></stringInTable>
+            <div class="uncheck__info"><a class="uncheck__info_order" href="#">Заявление на предоставление академического отпуска </a>
+              <div class="uncheck__info_date">Константинов Константин Константинович </div>
+              <div class="uncheck__info_group">3</div>
+              <div class="uncheck__info_comment">Ошибка в заполнении фио ректора </div>
+              <div class="uncheck__info_act">
+                <button class="uncheck__info_act_block send-back">
+                  <figure class="icon-send-back"></figure>
+                  <p class="uncheck__info_send_title">Отправить обратно</p>
+                </button>
+                <button class="uncheck__info_act_block">
+                  <figure class="icon-accept"></figure>
+                  <p class="uncheck__info_accept_title">Принять заявление</p>
+                </button>
+              </div>
+              <div class="uncheck__info_status">Отправлено для исправлений</div>
+            </div>
+            <div class="uncheck__info"><a class="uncheck__info_order" href="#">Заявление на предоставление академического отпуска </a>
+              <div class="uncheck__info_date">Константинов Константин Константинович</div>
+              <div class="uncheck__info_group">3333333333</div>
+              <div class="uncheck__info_comment">Ошибка в заполнении фио ректора</div>
+              <div class="uncheck__info_act">
+                <button class="uncheck__info_act_block send-back">
+                  <figure class="icon-send-back"></figure>
+                  <p class="uncheck__info_send_title">Отправить обратно</p>
+                </button>
+                <button class="uncheck__info_act_block">
+                  <figure class="icon-accept"></figure>
+                  <p class="uncheck__info_accept_title">Принять заявление</p>
+                </button>
+              </div>
+              <div class="uncheck__info_status">Отправлено для исправлений</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
